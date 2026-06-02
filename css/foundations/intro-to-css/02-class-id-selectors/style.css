@@ -1,0 +1,19 @@
+.paragraph {
+    background-color: rgb(225, 95, 117);
+    font-family: Verdana,DejaVu Sans, sans-serif;
+
+}
+
+#container1 {
+    color: hsl(240, 100%, 50%);
+    font-size: 36px;
+}
+
+.paragarph.cooler {
+    font-size: 24px;
+}
+#container2 {
+    background-color: rgb(132, 231, 132);
+    font-size: 24px;
+    font-weight: bold;
+}
