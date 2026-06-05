@@ -14,7 +14,7 @@ Working through The Odin Project to build real Full Stack Web Development skills
 - [x] Git and GitHub
 - [x] HTML Foundations
 - [x] CSS Foundations
-- [ ] Flexbox
+- [X] Flexbox
 - [ ] JavaScript Basics
 - [ ] Rock Paper Scissors Project
 - [ ] Etch-a-Sketch Project
