@@ -27,7 +27,7 @@ Working through The Odin Project to build real Full Stack Web Development skills
 | Project | Live Link | Code |
 |---------|-----------|------|
 | Recipes Website | [Live](https://rkboss07.github.io/TOP/odin-recipes/) | [Code](https://github.com/rkboss07/TOP/tree/main/odin-recipes) |
-| BlackWire 2099 | [Live](https://rkboss07.github.io/BLACKWIRE-2099/) | [Code] (https://github.com/rkboss07/BLACKWIRE-2099) |
+| BlackWire 2099 | [Live](https://rkboss07.github.io/BLACKWIRE-2099/) | [Code](https://github.com/rkboss07/BLACKWIRE-2099) |
 
 ---
 
