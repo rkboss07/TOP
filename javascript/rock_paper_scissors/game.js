@@ -1,27 +1,5 @@
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        let result = playRound(humanChoice, computerChoice);
-        if (result.startsWith("You win!")) {
-            humanScore++;
-        } else if (result.startsWith("You lose!")) {
-            computerScore++;
-        }
-        console.log(result);
-        console.log(`Score: You ${humanScore} - Computer ${computerScore}`);
-    }
 
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You won the game!");
-    } else if (humanScore < computerScore) {
-        console.log("Sorry! The computer won the game.");
-    } else {
-        console.log("It's a tie game!");
-    }
-}
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) { 
@@ -34,26 +12,45 @@ function getComputerChoice() {
     }
 }
 function getHumanChoice() {
-    let choice = prompt("Please choose rock, paper, or scissors:").toLowerCase();
-    while (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
-        choice = prompt("Invalid choice. Please choose rock, paper, or scissors:").toLowerCase();
+    if (document.querySelector(".rockButton").clicked) {
+        return "rock";
+    } else if (document.querySelector(".paperButton").clicked) {
+        return "paper";
+    } else if (document.querySelector(".scissorsButton").clicked) {
+        return "scissors";
     }
-    return choice;
 }
 
 
-
+const resultText = document.querySelector(".resultText");
+const humanPoints = document.querySelector(".humanPoints");
+const computerPoints = document.querySelector(".computerPoints");
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        return "It's a tie!";
+        resultText.textContent = `It's a tie! You both chose ${humanChoice}.`;
     } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        return `You win! ${humanChoice} beats ${computerChoice}.`;
+        resultText.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
+        humanPoints.textContent = parseInt(humanPoints.textContent) + 1;
     } else {
-        return `You lose! ${computerChoice} beats ${humanChoice}.`;
+        resultText.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
+        computerPoints.textContent = parseInt(computerPoints.textContent) + 1;
+    }
+    resultText.textContent = resultText.textContent;
+    humanPoints.textContent = humanPoints.textContent;
+    computerPoints.textContent = computerPoints.textContent;
+
+    if (parseInt(humanPoints.textContent) === 5) {
+        alert("Congratulations! You won the game!");
+        humanPoints.textContent = 0;
+        computerPoints.textContent = 0;
+    } else if (parseInt(computerPoints.textContent) === 5) {
+        alert("Sorry! The computer won the game.");
+        humanPoints.textContent = 0;
+        computerPoints.textContent = 0;
     }
 }
 

@@ -6,10 +6,21 @@
     <title>Rock,Paper,Scissors</title>
 </head>
 <body>
-    <script src="game.js"></script>
+    
     <h1>Rock, Paper, Scissors</h1>
     <p>Welcome to the game!</p>
-    <button onclick="playGame()">Start Game</button>
-
+    <button class="rockButton" onclick="playRound('rock', getComputerChoice())">Rock</button>
+    <button class="paperButton" onclick="playRound('paper', getComputerChoice())">Paper</button>
+    <button class="scissorsButton" onclick="playRound('scissors', getComputerChoice())">Scissors</button>
+    <p class="resultText"></p>
+    <div id="points">
+        <p>Human Points:
+            <span class="humanPoints">0</span>
+        </p>
+        <p>Computer Points:
+            <span class="computerPoints">0</span>
+        </p>
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>
